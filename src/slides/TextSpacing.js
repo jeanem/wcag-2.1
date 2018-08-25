@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Orientation extends Component {
+class TextSpacing extends Component {
 
     render() {
         const { title, number, level, detailLink } = this.props;
         return (
             <li>
                 <h2>{ title }</h2>
-                <p>"Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential."</p>
+                <p>"In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:"</p>
 
                 <ul>
                    <li> Line height (line spacing) to at least 1.5 times the font size;</li>
@@ -23,5 +23,5 @@ class Orientation extends Component {
     }
 }
 
-export default Orientation;
+export default TextSpacing;
 

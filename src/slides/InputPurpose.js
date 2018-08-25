@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 class InputPurpose extends Component {
 
     render() {
+        const { title, number, level } = this.props;
         return (
-            <div>
-                <p>InputPurpose - it is my purpose</p>
-            </div>
+            <li>
+                <h2>{ title }</h2>
+                <p>{number} {level}</p>
+            </li>
         );
     }
 }

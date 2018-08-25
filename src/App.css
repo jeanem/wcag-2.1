@@ -1,25 +1,46 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-  line-height: 25px;
+body, input, button {
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+/* 1.4.2 Text Spacing */
+  line-height: 1.5em;
+  letter-spacing: .12em;
+  word-spacing: .16em;
 }
 
-th {
-  background-color: #eee;
+p {
+  margin:0 0 2em 0;
+}
+/* End Text Spacing */
+
+.w-SlidesContainer {
+  list-style: none;
 }
 
-td, th {
-  text-align: center;
+.w-SlidesContainer ul {
+  margin:0 0 2em 0;
 }
 
-td:first-child {
-  text-align: left;
+/* .w-SlidesContainer ul > li {
+  line-height:2em;
+} */
+
+.w-SlideControls {
+  list-style:none;
 }
 
-input {
-  min-width: 300px;
-  border: 1px solid #999;
-  border-radius: 2px;
-  line-height: 25px;
+.w-SlideNav ul {
+  list-style-type:none;
+}
+
+.w-SlideNav ul li {
+  display:inline-block;
+  padding: 0 1.5em 0 0;
+}
+
+.w-BtnBase {
+  min-height:44px;
+  min-width:44px;
+  font-size:1em;
+  padding:0;
+  background-color: #d9d9d9;
 }
