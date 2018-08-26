@@ -4,7 +4,7 @@ class TextSpacing extends Component {
 
     render() {
         return (
-            <div>
+            <article>
                 <p>"In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:"</p>
 
                 <ul>
@@ -13,7 +13,7 @@ class TextSpacing extends Component {
                     <li>Letter spacing (tracking) to at least 0.12 times the font size;</li>
                     <li>Word spacing to at least 0.16 times the font size.</li>
                 </ul>
-            </div>
+            </article>
         );
     }
 }

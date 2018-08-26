@@ -31,7 +31,6 @@ class InputPurpose extends Component {
           });
       }
     render() {
-        const { fullname, fname, lname, aname } = this.state;
         return (
             <div>
                 <p>"The purpose of each input field collecting information about the user can be programmatically determined when:</p>
@@ -43,7 +42,7 @@ class InputPurpose extends Component {
                 <h3>A sample form</h3>
                 <form method="post" action="" onSubmit={ this.onSubmit.bind(this) }>
                     <fieldset>
-                        <legend>Autocomplete = "name"</legend>
+                        <legend>Autocomplete = name</legend>
 
                         <label for="wid-FullName1">Full name </label> 
                         <input id="wid-FullName1" type="text" name="fullname" autoComplete="name" onChange={this.onChange} />
@@ -54,18 +53,17 @@ class InputPurpose extends Component {
                         <input id="wid-FullName_AutoOff"  type="text" name="fullname" autoComplete="off" onChange={this.onChange} />
                     </fieldset>
                     <fieldset>
-                        <legend>Another field with autocomplete = "name" </legend>
+                        <legend>Another field with autocomplete = name </legend>
                         <label for="wid-FullName2">Enter full name a third time</label> 
                         <input id="wid-FullName2" type="text" name="fullname" autoComplete="name" onChange={this.onChange} />
                     </fieldset>
                     <fieldset>
-                        <legend>Autocomplete = "family-name"</legend>  
+                        <legend>Autocomplete = family-name</legend>  
                         <label for="wid-FamilyName">Family name (or last name)</label> 
                         <input id="wid-FamilyName" type="text" name="lname" autoComplete="family-name" onChange={this.onChange}/>
                     </fieldset>
                     <input type="submit" className="w-BtnBase" value="Submit" />
                 </form>
-                <p> <a href="https://www.w3.org/TR/html52/sec-forms.html#sec-autofill">A full list of autocomplete attribute values and usage</a></p>
             </div> 
         );
     }

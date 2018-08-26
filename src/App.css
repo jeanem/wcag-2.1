@@ -7,26 +7,42 @@ body, input, button {
   word-spacing: .16em;
 }
 
-p {
+p, ul {
   margin:0 0 2em 0;
 }
 /* End Text Spacing */
 
-.w-SlidesContainer {
+/* .w-SlidesContainer {
   list-style: none;
 }
 
-.w-SlidesContainer ul {
+.w-SlidesContainer li {
+  border-top: solid 4px #ccc;
+  margin:0 2em 0 0;
+} */
+
+/* .w-SlidesContainer ul {
   margin:0 0 2em 0;
+} */
+
+.w-SlidesContainer {
+  border-top: solid 4px #ccc;
+}
+
+.w-Slide {
+  border-bottom: solid 4px #ccc;
+  margin:2em 0 0 1em;
 }
 
 .w-SlidesContainer ul > li {
   margin: 0 0 .5em 0;
+  border:none
 } 
 
 .w-SlideControls {
   list-style:none;
 }
+
 
 .w-SlideNav ul {
   list-style-type:none;

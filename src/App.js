@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import Slides from './slides/SlideIndex';
-import Button from './components/Button';
+//import Button from './components/Button';
 import './App.css';
 
-
 class App extends Component {
+    constructor() {
+      super();
+      this.state = {
+        currentSlide: 'Overview',
+        nextSlide: 'Orientation',
+        prevSlide: ''
+      };
+    }
     render () {
 
       const slidesInfo = [
@@ -15,8 +22,8 @@ class App extends Component {
         {'slide': 'IdentifyPurpose', 'title':'Identify purpose', 'number':'1.3.6', 'level':'AAA', 'detailLink':'identify-purpose.html','cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'LabelInName', 'title':'Label in name', 'number':'2.5.3', 'level':'A', 'detailLink':'label-in-name.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'TargetSize', 'title':'Target size', 'number':'2.5.5', 'level':'AAA', 'detailLink':'target-size.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
-        {'slide': 'TextSpacing', 'title':'Text spacing', 'number':'1.4.2', 'level':'AA', 'detailLink':'text-spacing.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'NonTextContrast', 'title':'Non-text contrast', 'number':'1.4.1', 'level':'AA', 'detailLink':'non-text-contrast.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
+        {'slide': 'TextSpacing', 'title':'Text spacing', 'number':'1.4.2', 'level':'AA', 'detailLink':'text-spacing.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'ContentOnHover', 'title':'Content on Hover or Focus', 'number':'1.4.13', 'level':'AA', 'detailLink':'content-on-hover-or-focus.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'CharacterKeyShortcuts', 'title':'Character Key Shortcuts', 'number':'2.1.4', 'level':'A', 'detailLink':'character-key-shortcuts.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
         {'slide': 'PointerGestures', 'title':'Pointer Gestures', 'number':'2.5.1', 'level':'A', 'detailLink':'pointer-gestures.html', 'cssClassList':'w-BtnBase w-NavList_Btn'},
@@ -26,7 +33,7 @@ class App extends Component {
 
         const slides = [];
         const navList = [];
-        const navPrevNext = [];
+        //const navPrevNext = [];
         var SlideToRender;
 
         slidesInfo.forEach(function (slideInfo, index) {
@@ -40,8 +47,8 @@ class App extends Component {
 
           SlideToRender = Slides[slide];
           slides.push (
-            <li key={ slide } >
-                <h2>{ title }</h2>
+            <div className="w-Slide" key={ slide } >
+                <h2 id={"wid-SlideTitle_" +  slide }>{ title }</h2>
                   <SlideToRender />
                 { 
                   number != null
@@ -50,28 +57,26 @@ class App extends Component {
                   :
                   null 
                 }
-            </li>
+            </div>
            )
-          navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } cssClassList= { cssClassList } /></li>)
+          //(slide version) navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } cssClassList= { cssClassList } /></li>)
+          //use this in JSX instead of existing nav: <nav className="w-SlideNav" aria-label="Slide menu">[TODO: dynamically generate]
+          navList.push(<li key={ slide }><a href={"#wid-SlideTitle_" + slide}>{ title }</a> </li>)
         });
 
       return (
         <div>
-          <nav className="w-SlideNav" aria-label="Slide menu">[TODO: dynamically generate]
-          <h2>Slide menu</h2>
-            <ul>
-              { navList }
-            </ul>
-          </nav>
           <main>
-            <h1>WCAG 2.1</h1>
-            <ul className="w-SlidesContainer">
+            <h1>WCAG 2.1 new features</h1>
+            <nav className="w-Anchors" aria-labelledby="wid-MenuTitle">
+            <h2 id="wid-MenuTitle">Content menu</h2>
+              <ul>
+                { navList }
+              </ul>
+            </nav>
+            <div className="w-SlidesContainer">
               { slides }
-            </ul>
-            <ul className="w-SlideControls">
-              <li><button slide="button">Previous placeholder</button></li>
-              <li><button slide="button">Next placeholder</button></li>
-            </ul>
+            </div>
           </main>
         </div>
       )
