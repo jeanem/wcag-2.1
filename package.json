@@ -2,6 +2,7 @@
   "name": "wcag-2.1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jeanem.github.io/wcag-2.1/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
