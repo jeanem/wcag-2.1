@@ -20,9 +20,9 @@ p {
   margin:0 0 2em 0;
 }
 
-/* .w-SlidesContainer ul > li {
-  line-height:2em;
-} */
+.w-SlidesContainer ul > li {
+  margin: 0 0 .5em 0;
+} 
 
 .w-SlideControls {
   list-style:none;
@@ -42,5 +42,34 @@ p {
   min-width:44px;
   font-size:1em;
   padding:0;
-  background-color: #d9d9d9;
+  background-color:#fff;
+  border:solid 1px #000;
+}
+
+.w-BtnBase:focus, .w-BtnBase:active, mod-Active {
+  background-color:#000;
+  color:#fff;
+}
+
+.w-BtnBase:hover {
+  background-color:#4b2e83;
+  color:#fff;
+}
+
+/* forms */
+fieldset {
+  margin: 0 0 1em 0;
+}
+label {
+  display:block;
+  margin:1.5em 0 0 1em;
+}
+input[type=text] {
+  display:block;
+  max-width: 250px;
+  margin:0 0 1em 1em;
+}
+input[type=submit] {
+  margin:1em;
+  padding: .5em;
 }
