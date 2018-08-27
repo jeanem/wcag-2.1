@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class LabelInName extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"For user interface components with labels that include text or images of text, the name contains the text that is presented visually."</p>
+                <blockquote cite= { shortWCAGLink }>For user interface components with labels that include text or images of text, the name contains the text that is presented visually.</blockquote>
 
                 <ul>
                     <li>Name, in this context, is the accessible name <strong>not</strong> the name attribute on input elements</li>

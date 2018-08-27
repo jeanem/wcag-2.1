@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class NonTextContrast extends Component {
 
     render() {
-        return (
-            <div>
-                <p>"The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):"</p>
+            const { shortWCAGLink } = this.props;
+            return (
+                <div>
+                    <blockquote cite= { shortWCAGLink }>The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):</blockquote>
 
                 <ul>
                     <li>User Interface Components

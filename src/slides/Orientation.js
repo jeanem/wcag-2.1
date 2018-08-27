@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class Orientation extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential."</p>
+                <blockquote cite= { shortWCAGLink }>Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.</blockquote>
 
                 <ul>
                     <li>May be a more common issue currently in native apps, since there are straight-forward methods to do so</li>

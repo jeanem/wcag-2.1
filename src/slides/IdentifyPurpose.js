@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 class IdentifyPurpose extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"In content implemented using markup languages, the purpose of User Interface Components, icons, and regions can be programmatically determined."</p>
+                <blockquote cite= { shortWCAGLink }>In content implemented using markup languages, the purpose of User Interface Components, icons, and regions can be programmatically determined.</blockquote>
 
                 <ul>
-                    <li>Includes use of ARIA Landmarks (which is already a required technique for a couple of level A items) to identify regions of the page </li>
-                    <li>and in addition uses other semantic and microdata markup to implement the checkpoint</li>
-                    <li>"This success criteria requires the author to add the context, propose, and meaning of symbols, regions, buttons, links, and fields so that user agents knows what they do and can adapt them to make them understandable for the user." </li>
+                    <li>includes use of ARIA Landmarks (which is already a required technique for a couple of level A items) to identify regions of the page </li>
+                    <li>goes deeper by using other semantic and microdata markup to add context and meaning and purpose to a host of elements: symbols, regions, buttons, links, and fields </li>
+                    <li>the goal being to communicate this meaning to a user agent so they can make them understandable to the user </li>
                 </ul>
             </div> 
         );

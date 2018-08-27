@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class NonTextContrast extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:</p>
+                <blockquote cite= { shortWCAGLink }>Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:</blockquote>
 
                 <ul>
                     <li>User can dismiss without moving the pointer or keyboard focus - e.g. use the escape key</li>

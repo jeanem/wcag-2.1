@@ -31,35 +31,36 @@ class InputPurpose extends Component {
           });
       }
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"The purpose of each input field collecting information about the user can be programmatically determined when:</p>
+                <blockquote cite= { shortWCAGLink }>The purpose of each input field collecting information about the user can be programmatically determined when:</blockquote>
 
                 <ul>
-                    <li>The input field serves a purpose identified in the Input Purposes for <a href="https://www.w3.org/TR/WCAG21/#input-purposes">User Interface Components section</a>; and</li>
-                    <li>The content is implemented using technologies with support for identifying the expected meaning for form input data."</li>
+                    <li>The input field has a purpose listed in the <a href="https://www.w3.org/TR/WCAG21/#input-purposes">User Interface Components section</a>; and</li>
+                    <li>And the technologies implementing the content support an identifying method. HTML5 does this with the autocomplete attribute.</li>
                 </ul>
                 <h3>A sample form</h3>
                 <form method="post" action="" onSubmit={ this.onSubmit.bind(this) }>
                     <fieldset>
                         <legend>Autocomplete = name</legend>
 
-                        <label for="wid-FullName1">Full name </label> 
+                        <label htmlFor="wid-FullName1">Full name </label> 
                         <input id="wid-FullName1" type="text" name="fullname" autoComplete="name" onChange={this.onChange} />
                     </fieldset>
                     <fieldset>
                         <legend>Autocomplete is <strong>off</strong></legend>
-                        <label for="wid-FullName_AutoOff">Enter full name again </label> 
+                        <label htmlFor="wid-FullName_AutoOff">Enter full name again </label> 
                         <input id="wid-FullName_AutoOff"  type="text" name="fullname" autoComplete="off" onChange={this.onChange} />
                     </fieldset>
                     <fieldset>
                         <legend>Another field with autocomplete = name </legend>
-                        <label for="wid-FullName2">Enter full name a third time</label> 
+                        <label htmlFor="wid-FullName2">Enter full name a third time</label> 
                         <input id="wid-FullName2" type="text" name="fullname" autoComplete="name" onChange={this.onChange} />
                     </fieldset>
                     <fieldset>
                         <legend>Autocomplete = family-name</legend>  
-                        <label for="wid-FamilyName">Family name (or last name)</label> 
+                        <label htmlFor="wid-FamilyName">Family name (or last name)</label> 
                         <input id="wid-FamilyName" type="text" name="lname" autoComplete="family-name" onChange={this.onChange}/>
                     </fieldset>
                     <input type="submit" className="w-BtnBase" value="Submit" />

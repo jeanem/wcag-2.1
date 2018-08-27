@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class MotionActuation extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"Functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation."</p>
+                <blockquote cite= { shortWCAGLink }>Functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation.</blockquote>
             
 
                 <ul>

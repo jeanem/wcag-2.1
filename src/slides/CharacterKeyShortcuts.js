@@ -3,14 +3,19 @@ import React, { Component } from 'react';
 class NonTextContrast extends Component {
 
     render() {
+        const { shortWCAGLink } = this.props;
         return (
             <div>
-                <p>"If a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:</p>
+                <blockquote cite= { shortWCAGLink }>If a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:</blockquote>
 
                 <ul>
-                    <li>"Turn off - A mechanism is available to turn the shortcut off;</li>
-                    <li>"Remap - A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);</li>
-                    <li>"Active only on focus - The keyboard shortcut for a user interface component is only active when that component has focus.</li>
+                    <li>Can be turned off</li>
+                    <li>Can be remapped to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);</li>
+                    <li>The keyboard shortcut for a user interface component is only active when that component has focus, like a moving through a select element using letters to move amoung choices. <cite><a href="https://knowbility.org/blog/2018/WCAG21-214CharacterKeyShortcuts/"> See knowbility.org.</a></cite>
+
+
+                    </li>
+                    <li>Accesskeys are not affected because they include modifier keys</li>
                 </ul> 
             </div> 
         );
