@@ -1,4 +1,4 @@
-body, input, button,  {
+body, input, button  {
   font-size: 20px;
   font-family: 'Merriweather', serif;
 /* 1.4.2 Text Spacing */
@@ -20,9 +20,8 @@ p, ul, blockquote {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  //border-left: 10px solid #ccc;
   padding:.5em 1em 1em 1em;
-  width:80%;
   margin:0 0 2em 0;
 
 }

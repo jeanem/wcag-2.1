@@ -67,7 +67,8 @@ class App extends Component {
       return (
         <div>
           <main>
-            <h1>WCAG 2.1 new features</h1>
+            <h1>WCAG 2.1 New Features</h1>
+            <p>Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a></p>
             <nav className="w-Anchors" aria-labelledby="wid-MenuTitle">
             <h2 id="wid-MenuTitle">Content menu</h2>
               <ul>
