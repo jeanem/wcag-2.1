@@ -11,7 +11,7 @@ class NonTextContrast extends Component {
                 <ul>
                     <li>Can be turned off</li>
                     <li>Can be remapped to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);</li>
-                    <li>The keyboard shortcut for a user interface component is only active when that component has focus, like a moving through a select element using letters to move amoung choices. <cite><a href="https://knowbility.org/blog/2018/WCAG21-214CharacterKeyShortcuts/"> See knowbility.org.</a></cite>
+                    <li>The keyboard shortcut for a user interface component is only active when that component has focus, like a moving through a select element using letters to move among choices. <cite><a href="https://knowbility.org/blog/2018/WCAG21-214CharacterKeyShortcuts/"> See knowbility.org.</a></cite>
 
 
                     </li>
