@@ -36,6 +36,7 @@ class App extends Component {
         //const navPrevNext = [];
         var SlideToRender;
 
+        //todo, change to map
         slidesInfo.forEach(function (slideInfo, index) {
           const slide = slideInfo.slide;
           const title = slideInfo.title;

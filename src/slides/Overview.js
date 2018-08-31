@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Overview extends Component {
-
-    render() {
-        return (
+function Overview(props) {
+    return (
             <div>
                 <ul>
                     <li>Mobile is a focus, e.g. responsive design is a requirement</li>
@@ -14,7 +12,6 @@ class Overview extends Component {
             </div>
         );
     }
-}
 
 export default Overview;
 
