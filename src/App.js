@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Slides from './slides/SlideIndex';
-//import Button from './components/Button';
+import Button from './components/Button';
 import './App.css';
 
 class App extends Component {
@@ -47,39 +47,41 @@ class App extends Component {
 
           SlideToRender = Slides[slide];
           slides.push (
-            <div className="w-Slide" key={ slide } >
-                <h2 id={"wid-SlideTitle_" +  slide }>{ title }</h2>
-                  <SlideToRender shortWCAGLink = { shortWCAGLink } />
-                { 
-                  number != null
-                  ?
-                  WCAGLink
-                  :
-                  null 
-                }
-            </div>
+            <li key={ slide } >
+              <h2 id={"wid-SlideTitle_" +  slide }>{ title }</h2>
+              <SlideToRender  shortWCAGLink = { shortWCAGLink } />
+              { 
+                number != null
+                ?
+                WCAGLink
+                :
+                null 
+              }
+          </li>
            )
-          //(slide version) navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } cssClassList= { cssClassList } /></li>)
-          //use this in JSX instead of existing nav: <nav className="w-SlideNav" aria-label="Slide menu">[TODO: dynamically generate]
-          navList.push(<li key={ slide }><a href={"#wid-SlideTitle_" + slide}>{ title }</a> </li>)
+           navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } /></li>)
         });
 
       return (
         <div>
-          <main>
-            <h1>WCAG 2.1 New Features</h1>
-            <p>Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a></p>
-            <nav className="w-Anchors" aria-labelledby="wid-MenuTitle">
-            <h2 id="wid-MenuTitle">Content menu</h2>
-              <ul>
-                { navList }
-              </ul>
-            </nav>
-            <div className="w-SlidesContainer">
-              { slides }
-            </div>
-          </main>
-        </div>
+        <nav className="w-SlideNav" aria-label="Slide menu">[TODO: dynamically generate]
+        <h2>Slide menu</h2>
+          <ul>
+            { navList }
+          </ul>
+        </nav>
+        <main>
+          <h1>WCAG 2.1</h1>
+          <p>Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a></p>
+          <ul className="w-SlidesContainer">
+            { slides }
+          </ul>
+          <ul className="w-SlideControls">
+            <li><button slide="button">Previous placeholder</button></li>
+            <li><button slide="button">Next placeholder</button></li>
+          </ul>
+        </main>
+      </div>
       )
     }
 }
