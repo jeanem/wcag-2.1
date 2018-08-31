@@ -60,15 +60,16 @@ class App extends Component {
               }
           </li>
            )
-           navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } /></li>)
+           navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } cssClassList="w-BtnBase" /></li>)
         });
 
       return (
         <div>
-        <nav className="w-SlideNav" aria-label="Slide menu">[TODO: dynamically generate]
-        <h2>Slide menu</h2>
-          <ul>
+        <nav className="w-SlideNav" aria-label="Slide menu">
+          <ul className="w-BtnSet">         
             { navList }
+          <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Previous</button></li>
+          <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Next</button></li>
           </ul>
         </nav>
         <main>
@@ -77,9 +78,9 @@ class App extends Component {
           <ul className="w-SlidesContainer">
             { slides }
           </ul>
-          <ul className="w-SlideControls">
-            <li><button slide="button">Previous placeholder</button></li>
-            <li><button slide="button">Next placeholder</button></li>
+          <ul className="w-BtnSet">
+            <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Previous</button></li>
+            <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Next</button></li>
           </ul>
         </main>
       </div>

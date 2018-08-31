@@ -35,21 +35,17 @@ cite {
 }
 /* End Text Spacing */
 
-/* .w-SlidesContainer {
+.w-SlidesContainer {
   list-style: none;
 }
 
 .w-SlidesContainer li {
   border-top: solid 4px #ccc;
   margin:0 2em 0 0;
-} */
+}
 
-/* .w-SlidesContainer ul {
+.w-SlidesContainer ul {
   margin:0 0 2em 0;
-} */
-
-.w-SlidesContainer {
-  border-top: solid 4px #ccc;
 }
 
 .w-Slide {
@@ -66,33 +62,41 @@ cite {
   list-style:none;
 }
 
-
-.w-SlideNav ul {
-  list-style-type:none;
-}
-
-.w-SlideNav ul li {
-  display:inline-block;
-  padding: 0 1.5em 0 0;
-}
-
 .w-BtnBase {
   min-height:44px;
   min-width:44px;
   font-size:1em;
   padding:0;
-  background-color:#fff;
-  border:solid 1px #000;
+  border: solid 2px #4b2e83;
+  background-color:#4b2e83;
+  color:#fff;
 }
 
 .w-BtnBase:focus, .w-BtnBase:active, mod-Active {
-  background-color:#000;
-  color:#fff;
+  background-color:#fff;
+  color:#4b2e83;
+
 }
 
 .w-BtnBase:hover {
-  background-color:#4b2e83;
-  color:#fff;
+  background-color:#fff;
+  color:#4b2e83;
+}
+
+.w-BtnPrevNext {
+
+}
+
+.w-BtnSet { /* ul */
+  display:flex;
+  flex-wrap:wrap;
+  list-style-type:none;
+  margin:0;
+}
+
+.w-BtnSet li {
+  padding: 0.5em .5em 0 0;
+
 }
 
 /* forms */
