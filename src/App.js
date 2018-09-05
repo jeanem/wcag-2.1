@@ -8,12 +8,23 @@ class App extends Component {
       super();
       this.state = {
         currentSlide: 'Overview',
-        nextSlide: 'Orientation',
-        prevSlide: ''
+        currentTitle: 'Overview',
+        currentNumber: null,
+        currentLevel: null,
+        currentDetailLink: null,
       };
+      this.updateState = this.updateState.bind(this);
+    }
+    updateState( currentSlide, currentTitle, currentNumber, currentLevel, currentDetailLink) {
+      this.setState ({
+          currentSlide: currentSlide,
+          currentTitle: currentTitle,
+          currentNumber: currentNumber,
+          currentLevel: currentLevel,
+          currentDetailLink: currentDetailLink
+      });
     }
     render () {
-
       const slidesInfo = [
         {'slide': 'Overview', 'title':'Overview', 'number':null, 'level':null, 'detailLink':null },
         {'slide': 'Orientation', 'title':'Orientation', 'number':'1.3.4', 'level':'AA', 'detailLink':'orientation.html' },
@@ -30,37 +41,29 @@ class App extends Component {
         {'slide': 'PointerCancellation', 'title':'Pointer cancellation', 'number':'2.5.2', 'level':'A', 'detailLink':'pointer-cancellation.html'},
         {'slide': 'MotionActuation', 'title':'Motion actuation', 'number':'2.5.4', 'level':'A', 'detailLink':'motion-actuation.html'}
       ];
-
-        const slides = [];
-        const navList = [];
-        //const navPrevNext = [];
-        var SlideToRender;
-
-        //todo, change to map
-        slidesInfo.forEach(function (slideInfo, index) {
+        const { currentSlide, currentTitle, currentNumber, currentLevel, currentDetailLink } = this.state;
+        var WCAGLink =  <p><a href={"https://www.w3.org/WAI/WCAG21/Understanding/" + currentDetailLink }>{ currentTitle } {currentNumber} ({currentLevel}) details and exceptions</a></p>;
+        var shortWCAGLink = "https://www.w3.org/WAI/WCAG21/Understanding/" + currentDetailLink;
+        var SlideToRender = Slides[currentSlide] = require('./slides/' + currentSlide).default;
+        var navList = slidesInfo.map( (slideInfo, index) => {
           const slide = slideInfo.slide;
           const title = slideInfo.title;
           const number = slideInfo.number;
           const level = slideInfo.level;
           const detailLink = slideInfo.detailLink;
-          var WCAGLink =  <p><a href={"https://www.w3.org/WAI/WCAG21/Understanding/" + detailLink }>{ title } {number} ({level}) details and exceptions</a></p>;
-          var shortWCAGLink = "https://www.w3.org/WAI/WCAG21/Understanding/" + detailLink;
-
-          SlideToRender = Slides[slide];
-          slides.push (
-            <li key={ slide } >
-              <h2 id={"wid-SlideTitle_" +  slide }>{ title }</h2>
-              <SlideToRender  shortWCAGLink = { shortWCAGLink } />
-              { 
-                number != null
-                ?
-                WCAGLink
-                :
-                null 
-              }
-          </li>
-           )
-           navList.push(<li key={ slide }><Button slide={ slide } buttonText= { index + 1 } cssClassList="w-BtnBase" /></li>)
+          return (
+            <li key={ slide }>
+              <Button 
+                slide={ slide }
+                title= { title }
+                number= { number }
+                level= { level }
+                detailLink= { detailLink }
+                buttonText= { index + 1 } 
+                cssClassList="w-BtnBase"
+                updateState={this.updateState} />
+            </li>
+          );
         });
 
       return (
@@ -76,7 +79,17 @@ class App extends Component {
           <h1>WCAG 2.1</h1>
           <p>Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a></p>
           <ul className="w-SlidesContainer">
-            { slides }
+            <li key={ currentSlide } >
+              <h2 id={"wid-SlideTitle_" +  currentSlide }>{ currentTitle }</h2>
+                <SlideToRender  shortWCAGLink = { shortWCAGLink } />
+                { 
+                currentNumber != null
+                ?
+                WCAGLink
+                :
+                null 
+                }
+            </li>
           </ul>
           <ul className="w-BtnSet">
             <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Previous</button></li>

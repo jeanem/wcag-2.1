@@ -70,6 +70,7 @@ cite {
   border: solid 2px #4b2e83;
   background-color:#4b2e83;
   color:#fff;
+  cursor:pointer;
 }
 
 .w-BtnBase:focus, .w-BtnBase:active, mod-Active {
