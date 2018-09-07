@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 class Button extends Component {
     buttonPressed() {
-        const { slide, title, number, level, detailLink, updateState } = this.props;
-        updateState(slide, title, number, level, detailLink);
+        const { slide, title, number, level, detailLink, index, updateState } = this.props;
+        updateState(slide, title, number, level, detailLink, index);
 
     }
 
