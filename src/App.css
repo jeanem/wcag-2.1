@@ -6,8 +6,12 @@ body, input, button  {
   letter-spacing: .12em;
   word-spacing: .16em;
 }
+
 main {
-  padding: 0 1em;
+  padding: 0 2em;
+}
+h1 {
+  margin:0 0 .2em 1em;
 }
 
 h1, h2 {
@@ -17,10 +21,12 @@ h1, h2 {
 p, ul, blockquote {
   margin:0 0 2em 0;
 }
+.w-SiteLink {
+
+}
 
 blockquote {
   background: #f9f9f9;
-  //border-left: 10px solid #ccc;
   padding:.5em 1em 1em 1em;
   margin:0 0 2em 0;
 
@@ -67,25 +73,28 @@ cite {
   min-width:44px;
   font-size:1em;
   padding:0;
-  border: solid 2px #4b2e83;
-  background-color:#4b2e83;
+  border: solid 2px #8F8F8F;
+  background-color:#8F8F8F;
   color:#fff;
   cursor:pointer;
 }
 
-.w-BtnBase:focus, .w-BtnBase:active, mod-Active {
+.w-BtnBase:focus, .w-BtnBase:active, .w-BtnBase:hover, mod-Active {
   background-color:#fff;
   color:#4b2e83;
-
+  border: solid 2px #4b2e83;
 }
 
-.w-BtnBase:hover {
-  background-color:#fff;
-  color:#4b2e83;
+.w-BtnPrev {
+  position:fixed;
+  left:0;
+  top:50%;
+
 }
-
-.w-BtnPrevNext {
-
+.w-BtnNext {
+  position:fixed;
+  right:0;
+  top:50%;
 }
 
 .w-BtnSet { /* ul */

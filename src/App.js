@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Slides from './slides/SlideIndex';
 import Button from './components/Button';
+import PrevNext from './components/PrevNext';
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+library.add(faChevronRight, faChevronLeft)
 
 class App extends Component {
     constructor() {
@@ -26,6 +31,7 @@ class App extends Component {
           index: index
       });
     }
+
     render () {
       const { currentSlide, currentTitle, currentNumber, currentLevel, currentDetailLink, index } = this.state;
       const slidesInfo = [
@@ -44,62 +50,62 @@ class App extends Component {
         {'slide': 'PointerCancellation', 'title':'Pointer cancellation', 'number':'2.5.2', 'level':'A', 'detailLink':'pointer-cancellation.html'},
         {'slide': 'MotionActuation', 'title':'Motion actuation', 'number':'2.5.4', 'level':'A', 'detailLink':'motion-actuation.html'}
       ];
+    
+    let prevIndex;
+    let nextIndex;
+    const totalSlides = slidesInfo.length;
+
+    index === 0
+    ?
+    prevIndex = totalSlides - 1
+    :
+    prevIndex = index - 1
 
 
-    const nextIndex = index + 1;
-    const prevIndex = index - 1;
+    index === totalSlides - 1
+    ?
+    nextIndex = 0
+    :
+    nextIndex = index + 1
 
-    console.warn(slidesInfo[nextIndex].slide);
+    console.warn(index, prevIndex, nextIndex, slidesInfo[index].slide);
     var WCAGLink =  <p><a href={"https://www.w3.org/WAI/WCAG21/Understanding/" + currentDetailLink }>{ currentTitle } {currentNumber} ({currentLevel}) details and exceptions</a></p>;
     var shortWCAGLink = "https://www.w3.org/WAI/WCAG21/Understanding/" + currentDetailLink;
     var SlideToRender = Slides[currentSlide] = require('./slides/' + currentSlide).default;
     var navList = slidesInfo.map( (slideInfo, index) => {
-      const slide = slideInfo.slide;
-      const title = slideInfo.title;
-      const number = slideInfo.number;
-      const level = slideInfo.level;
-      const detailLink = slideInfo.detailLink;
       return (
-        <li key={ slide }>
+        <li key={ slideInfo.slide }>
           <Button 
-            slide={ slide }
-            title= { title }
-            number= { number }
-            level= { level }
-            detailLink= { detailLink }
+            slide={ slideInfo.slide }
+            title= { slideInfo.title }
+            number= { slideInfo.number }
+            level= { slideInfo.level }
+            detailLink= { slideInfo.detailLink }
             index = { index }
             buttonText= { index + 1 } 
             cssClassList="w-BtnBase"
             updateState={this.updateState} />
         </li>
       );
-      
     });
-    var PrevNext = function() {
-      return (
-        <ul className="w-BtnSet">
-        <li>
-        <button 
-          className="w-BtnBase w-BtnPrevNext" 
-          >
-          Previous
-          </button>
-      </li>
-      <li><button className="w-BtnBase w-BtnPrevNext" slide="button">Next</button></li>
-      </ul>
-      )
-    };
-
       return (
         <div>
-        <nav className="w-SlideNav" aria-label="Slide menu">
+
+        <main>
+          <h1>WCAG 2.1 highlights</h1> 
+        
+          <nav className="w-SlideNav" aria-label="Slide menu">
           <ul className="w-BtnSet">         
             { navList }
           </ul>
         </nav>
-        <main>
-          <h1>WCAG 2.1 highlights</h1>
-          <p>Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a></p>
+        <PrevNext 
+          prevSlide = { slidesInfo[prevIndex] }
+          nextSlide = { slidesInfo[nextIndex] }
+          prevIndex = { prevIndex }
+          nextIndex= { nextIndex }
+          updateState={ this.updateState }
+        />
           <ul className="w-SlidesContainer">
             <li key={ currentSlide } >
               <h2 id={"wid-SlideTitle_" +  currentSlide }>{ currentTitle }</h2>
@@ -113,7 +119,7 @@ class App extends Component {
                 }
             </li>
           </ul>
-                <PrevNext />
+
         </main>
       </div>
       )
