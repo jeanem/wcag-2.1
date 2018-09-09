@@ -61,7 +61,7 @@ class Button extends Component {
                     :
                     "w-BtnBase w-ToolTipped"
                 }
-                aria-labelledby={tipID}
+                aria-describedby={tipID}
                 onClick={ this.buttonClicked.bind(this) }
             >
                 { buttonText }
