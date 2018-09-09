@@ -7,9 +7,9 @@ class Button extends Component {
 
         newSlide === 'prevSlide'
         ?
-        updateState(prevSlide.slide, prevSlide.title, prevSlide.number, prevSlide.level, prevSlide.detailLink, prevIndex)
+        updateState(prevSlide.slide, prevSlide.title, prevSlide.shortTitle, prevSlide.number, prevSlide.level, prevSlide.detailLink, prevIndex)
         :
-        updateState(nextSlide.slide, nextSlide.title, nextSlide.number, nextSlide.level, nextSlide.detailLink, nextIndex)
+        updateState(nextSlide.slide, nextSlide.title, nextSlide.shortTitle, nextSlide.number, nextSlide.level, nextSlide.detailLink, nextIndex)
 
     }
 
