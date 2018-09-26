@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Overview(props) {
     return (
             <div>
-                <p className="w-SiteLink"><FontAwesomeIcon icon="chevron-left" /> Follow along at <a href="https://jeanem.github.io/">https://jeanem.github.io/</a> <FontAwesomeIcon icon="chevron-right" /></p>
+                <p className="w-SiteLink"><FontAwesomeIcon icon="chevron-left" /> Follow along at <a href="https://jeanem.github.io/wcag-2.1/">https://jeanem.github.io/wcag-2.1/</a> <FontAwesomeIcon icon="chevron-right" /></p>
                 <ul>
                     <li>Mobile is a focus, e.g. responsive design is a requirement</li>
                     <li>Improves accessibility for users who have cognitive or learning disabilities</li>
